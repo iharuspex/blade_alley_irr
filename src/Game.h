@@ -8,48 +8,49 @@
 
 #include "EventReceiver.h"
 
+#include "GameStateManager.h"
+
 class Game {
 public:
-    static Game *instance();
+  static Game *instance();
 
-    ~Game();
+  ~Game();
 
-    bool init(const wchar_t *title, int width, int height, bool fullscreen);
-    void render();
-    void update();
-    void handleEvents();
-    void clean();
-    bool isRunning();
+  bool init(const wchar_t *title, int width, int height, bool fullscreen);
+  void render();
+  void update();
+  void handleEvents();
+  void clean();
+  bool isRunning();
 
-    void quit();
+  void quit();
 
-    void printFPS();
+  void printFPS();
 
 private:
-    Game();
+  Game();
 
-    static Game *s_pInstance;
+  static Game *s_pInstance;
 
-    irr::IrrlichtDevice *m_pDevice = nullptr;
-    irr::video::IVideoDriver *m_pVideoDriver = nullptr;
-    irr::scene::ISceneManager *m_pSceneManager = nullptr;
-    irr::gui::IGUIEnvironment *m_pGuiEnvironment = nullptr;
+  irr::IrrlichtDevice *m_pDevice = nullptr;
+  irr::video::IVideoDriver *m_pVideoDriver = nullptr;
+  irr::scene::ISceneManager *m_pSceneManager = nullptr;
+  irr::gui::IGUIEnvironment *m_pGuiEnvironment = nullptr;
 
-    irr::scene::IAnimatedMesh *mesh;
-    irr::scene::IAnimatedMeshSceneNode *node;
-    irr::scene::ICameraSceneNode *camera;
-    irr::core::vector3df cameraPos;
+  irr::scene::IAnimatedMesh *mesh;
+  irr::scene::IAnimatedMeshSceneNode *node;
+  irr::scene::ICameraSceneNode *camera;
+  irr::core::vector3df cameraPos;
 
-    int lastFPS = -1;
-    irr::u32 thenTime;
-    irr::f32 frameDeltaTime;
-    irr::gui::IGUIStaticText *fpsGui;
+  int lastFPS = -1;
+  irr::u32 thenTime;
+  irr::f32 frameDeltaTime;
+  irr::gui::IGUIStaticText *fpsGui;
 
+  EventReceiver *m_pEventReceiver;
 
-    EventReceiver *m_pEventReceiver;
-
-    // TODO: create logger later
-    // irr::ILogger logger;
+  // TODO: create logger later
+  // irr::ILogger logger;
 };
 
 #endif /* GAME_H_ */

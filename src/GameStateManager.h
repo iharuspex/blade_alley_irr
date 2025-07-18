@@ -5,18 +5,17 @@
 
 #include "GameState.h"
 
-class GameStateManager
-{
+class GameStateManager {
 public:
-    void update();
-    void render();
+  void update();
+  void render();
 
-    void pushState(GameState *pState);
-    void changeState(GameState *pState);
-    void popState();
+  void pushState(GameState *pState);
+  void changeState(GameState *pState);
+  void popState();
 
 private:
-    std::vector<GameState *> m_gameStates;
+  std::vector<GameState *> m_gameStates;
 };
 
 #endif /* GAMESTATECONTROLLER_H_ */
