@@ -1,5 +1,5 @@
-#include "Game.h"
-#include "EventReceiver.h"
+#include <iostream>
+
 #include <irrlicht/EMaterialFlags.h>
 #include <irrlicht/IAnimatedMesh.h>
 #include <irrlicht/IGUISkin.h>
@@ -7,7 +7,8 @@
 #include <irrlicht/irrTypes.h>
 #include <irrlicht/vector3d.h>
 
-#include <iostream>
+#include "Game.h"
+#include "EventReceiver.h"
 
 using namespace irr;
 using namespace core;
