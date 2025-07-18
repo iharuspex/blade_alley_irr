@@ -1,3 +1,5 @@
 build/
 cmake-build-debug/
 irrKlang/
+.cache/
+*_bak
